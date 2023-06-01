@@ -14,6 +14,7 @@ app.use("/api/users", usersRoute)
 app.use("/api/products", productRoute)
 
 const MongoDB_connect = process.env.MongoDB;
+PORT = process.env.PORT || 3001
 
 // console.log(MongoDB_connect);
 
@@ -35,7 +36,7 @@ app.get("/", (req, res)=>{
     res.send("This is from backend file")
 })
 
-app.listen(3001, ()=>{
+app.listen(PORT, ()=>{
     console.log("Status 200 server connected");
         ConnectDB()
 })
